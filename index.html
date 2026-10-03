@@ -1987,6 +1987,23 @@
         }
       }
 
+      /* Botones del hero apilados en pantallas pequeñas */
+      @media (max-width: 640px) {
+        .hero-buttons {
+          flex-direction: column;
+          align-items: center;
+          gap: 12px;
+          width: 100%;
+          padding: 0 20px;
+        }
+        .hero-buttons .btn-premium {
+          display: block;
+          width: 100%;
+          max-width: 280px;
+          text-align: center;
+        }
+      }
+
       /* RESPONSIVE */
       @media (max-width: 768px) {
         /* Encabezado y Navegación */
