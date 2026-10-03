@@ -1784,6 +1784,209 @@
         color: #000000;
       }
 
+      /* --- SECCIÓN MODELOS POR COTIZAR --- */
+      .hero-buttons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .btn-premium.alt {
+        background-color: #d5bd96;
+        color: var(--bg-dark);
+      }
+      .btn-premium.alt:hover {
+        background-color: var(--white);
+      }
+      .section-subtitle {
+        font-size: 0.8rem;
+        color: var(--text-gray);
+        letter-spacing: 1px;
+        line-height: 1.7;
+        margin-top: 20px;
+        max-width: 560px;
+      }
+      .delivery-banner {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 25px;
+        padding: 12px 22px;
+        border: 1px solid rgba(196, 139, 34, 0.5);
+        background: rgba(196, 139, 34, 0.08);
+        color: #d5bd96;
+        font-size: 0.75rem;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+      .delivery-banner.now {
+        background: rgba(196, 139, 34, 0.18);
+        border-color: var(--gold-premium);
+        color: var(--white);
+        font-weight: 600;
+        animation: bannerGlow 2.5s ease-in-out infinite;
+      }
+      .delivery-banner.now i {
+        color: #d8b068;
+      }
+      @keyframes bannerGlow {
+        0%, 100% { box-shadow: 0 0 0 rgba(196, 139, 34, 0); }
+        50% { box-shadow: 0 0 18px rgba(196, 139, 34, 0.45); }
+      }
+      #quote-search-bar {
+        width: 100%;
+        max-width: 400px;
+        padding: 15px 20px;
+        background: #111;
+        border: 1px solid var(--gold-premium);
+        color: white;
+        margin: 30px auto 0;
+        display: block;
+        text-align: center;
+        letter-spacing: 2px;
+      }
+      #quote-search-bar:focus {
+        outline: none;
+        border-color: white;
+      }
+      .card-tag {
+        display: inline-block;
+        align-self: flex-start;
+        font-size: 0.58rem;
+        padding: 4px 10px;
+        border: 1px solid var(--gold-premium);
+        color: #d5bd96;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      .quote-empty {
+        grid-column: 1 / -1;
+        text-align: center;
+        color: var(--text-gray);
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+        line-height: 1.7;
+        padding: 40px 10px;
+      }
+      .quote-help {
+        text-align: center;
+        margin-top: 50px;
+      }
+      .quote-help .btn-premium {
+        display: inline-block;
+      }
+      /* --- ZOOM TIPO AMAZON (MODELOS POR COTIZAR) --- */
+      .product-image-box.quote-zoom {
+        position: relative;
+        cursor: zoom-in;
+      }
+      .product-card .product-image-box.quote-zoom .product-img {
+        transition: transform 0.2s ease;
+      }
+      @media (hover: hover) and (pointer: fine) {
+        .product-card .product-image-box.quote-zoom:hover .product-img {
+          transform: scale(2.2);
+        }
+        .product-image-box.quote-zoom:hover .zoom-hint {
+          opacity: 0;
+        }
+      }
+      .zoom-hint {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.6);
+        border: 1px solid rgba(196, 139, 34, 0.6);
+        color: #d8b068;
+        font-size: 0.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: none;
+        transition: opacity 0.2s ease;
+      }
+      .qlb-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.92);
+        backdrop-filter: blur(6px);
+        z-index: 10000;
+        display: none;
+        align-items: center;
+        justify-content: center;
+      }
+      .qlb-overlay.open {
+        display: flex;
+      }
+      .qlb-stage {
+        width: 92vw;
+        height: 85vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+      .qlb-img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        cursor: zoom-in;
+        transition: transform 0.25s ease;
+        user-select: none;
+        -webkit-user-drag: none;
+      }
+      .qlb-img.zoomed {
+        transform: scale(2.5);
+        cursor: zoom-out;
+      }
+      .qlb-close {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        background: none;
+        border: none;
+        color: #bbb;
+        font-size: 2.2rem;
+        line-height: 1;
+        cursor: pointer;
+        z-index: 2;
+      }
+      .qlb-close:hover {
+        color: #c5a059;
+      }
+      .qlb-tip {
+        position: absolute;
+        bottom: 18px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        color: var(--text-gray);
+        font-size: 0.65rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        pointer-events: none;
+      }
+      .search-filter-container #quote-search-bar {
+        margin: 0;
+        flex: 1;
+        max-width: none;
+      }
+      @media (max-width: 768px) {
+        #quote-search-bar {
+          padding: 10px;
+          margin-top: 15px;
+          font-size: 0.8rem;
+        }
+        .delivery-banner {
+          font-size: 0.65rem;
+          padding: 10px 14px;
+        }
+      }
+
       /* RESPONSIVE */
       @media (max-width: 768px) {
         /* Encabezado y Navegación */
@@ -2110,7 +2313,10 @@
         <div class="hero-content">
           <h1 class="hero-title">Neo Chronos</h1>
           <p class="hero-subtitle">Ingeniería, Oro y Acero</p>
-          <a href="#coleccion" class="btn-premium">Descubrir Modelos</a>
+          <div class="hero-buttons">
+            <a href="#coleccion" class="btn-premium">Modelos Disponibles</a>
+            <a href="#cotizar" class="btn-premium alt">Cotizar un Modelo</a>
+          </div>
           <div class="brand-marquee">
             <div class="marquee-track">
               <div class="brand-item">FOSSIL</div>
@@ -2127,6 +2333,10 @@
         <div class="section-header">
           <h2 class="section-title">Modelos Disponibles</h2>
           <div class="section-divider"></div>
+          <div class="delivery-banner now">
+            <i class="fas fa-bolt"></i> Entrega inmediata · ¡Compra ahora, ya
+            está listo para ti!
+          </div>
 
           <div class="search-filter-container">
             <input
@@ -2152,6 +2362,55 @@
         <div style="width: 100%">
           <div id="product-grid" class="grid-products"></div>
           <div id="pagination-controls" class="pagination"></div>
+        </div>
+      </section>
+
+      <!-- === MODELOS POR COTIZAR (BAJO PEDIDO) === -->
+      <section class="products-section" id="cotizar" style="padding-top: 60px">
+        <div class="section-header">
+          <h2 class="section-title">Modelos por Cotizar</h2>
+          <div class="section-divider"></div>
+          <p class="section-subtitle">
+            Elige el modelo que te gusta, cotízalo por WhatsApp y nosotros lo
+            traemos para ti.
+          </p>
+          <div class="delivery-banner">
+            <i class="fas fa-truck-fast"></i> Entrega estimada: 15 a 20 días
+          </div>
+          <div class="search-filter-container">
+            <input
+              type="text"
+              id="quote-search-bar"
+              placeholder="Buscar modelo..."
+              onkeyup="onQuoteSearch()"
+            />
+
+            <div class="filter-dropdown-wrapper">
+              <div class="filter-toggle" id="btn-toggle-marcas-quote">
+                Marcas
+                <span
+                  id="flecha-marcas-quote"
+                  style="transition: transform 0.3s ease"
+                  >▼</span
+                >
+              </div>
+              <div id="quote-brand-filters" class="dropdown-content"></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="width: 100%">
+          <div id="quote-grid" class="grid-products"></div>
+          <div id="quote-pagination" class="pagination"></div>
+          <div class="quote-help">
+            <a
+              id="quote-custom-wa"
+              class="btn-premium"
+              href="#"
+              target="_blank"
+              >¿No ves tu modelo? Cotízalo por WhatsApp</a
+            >
+          </div>
         </div>
       </section>
     </div>
@@ -3497,7 +3756,345 @@
         event.stopPropagation();
       }
 
+      // ===== MODELOS POR COTIZAR (se leen de la hoja Sheet2) =====
+      const WHATSAPP_NUMBER = "593987916568";
+      const QUOTE_DELIVERY_TEXT = "15 a 20 días";
+      // Nombre de la pestaña (abajo en tu Excel). Si la tuya se llama distinto, cámbialo aquí.
+      const QUOTE_SHEET_NAME = "Sheet2";
+      const QUOTE_SHEET_URL = `${SHEET_URL}&sheet=${encodeURIComponent(QUOTE_SHEET_NAME)}`;
+
+      let quoteData = {};
+      let quotePage = 1;
+      let quoteBrand = "Todos";
+      const quoteItemsPerPage = 12;
+
+      function parseCSV(text) {
+        const rows = [];
+        let row = [],
+          cell = "",
+          q = false;
+        for (let i = 0; i < text.length; i++) {
+          const c = text[i],
+            n = text[i + 1];
+          if (q) {
+            if (c === '"' && n === '"') {
+              cell += '"';
+              i++;
+            } else if (c === '"') q = false;
+            else cell += c;
+          } else if (c === '"') q = true;
+          else if (c === ",") {
+            row.push(cell);
+            cell = "";
+          } else if (c === "\n" || c === "\r") {
+            if (c === "\r" && n === "\n") i++;
+            row.push(cell);
+            cell = "";
+            rows.push(row);
+            row = [];
+          } else cell += c;
+        }
+        if (cell !== "" || row.length) {
+          row.push(cell);
+          rows.push(row);
+        }
+        return rows;
+      }
+
+      async function loadQuoteModels() {
+        try {
+          const response = await fetch(QUOTE_SHEET_URL);
+          const rows = parseCSV(await response.text());
+          if (rows.length > 1) {
+            const headers = rows[0].map((h) => h.trim());
+            rows.slice(1).forEach((row, idx) => {
+              const item = {};
+              headers.forEach((h, i) => (item[h] = (row[i] || "").trim()));
+              if (!item.title) return;
+              const imgs = item.image || item.images;
+              quoteData[item.id || "q" + idx] = {
+                title: item.title,
+                brand: item.brand,
+                folder: item.folder,
+                images: imgs ? imgs.split(",").map((s) => s.trim()) : [],
+              };
+            });
+          }
+        } catch (error) {
+          console.error("Error cargando modelos por cotizar:", error);
+        }
+        initQuoteFilters();
+        updateQuoteCatalog();
+      }
+
+      function initQuoteFilters() {
+        const container = document.getElementById("quote-brand-filters");
+        if (!container) return;
+        const items = Object.values(quoteData);
+        const brands = ["Todos", ...new Set(items.map((p) => p.brand).filter(Boolean))];
+        container.innerHTML = "";
+
+        brands.forEach((b) => {
+          const count =
+            b === "Todos"
+              ? items.length
+              : items.filter((p) => p.brand === b).length;
+          const div = document.createElement("div");
+          div.className = `brand-option ${quoteBrand === b ? "active" : ""}`;
+          div.innerHTML = `${b} <span style="font-size: 0.7rem; color: var(--text-gray);">(${count})</span>`;
+          div.onclick = () => {
+            quoteBrand = b;
+            quotePage = 1;
+            initQuoteFilters();
+            updateQuoteCatalog();
+          };
+          container.appendChild(div);
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const btn = document.getElementById("btn-toggle-marcas-quote");
+        const box = document.getElementById("quote-brand-filters");
+        const arrow = document.getElementById("flecha-marcas-quote");
+        if (!btn || !box) return;
+        btn.addEventListener("click", () => {
+          const abierto = box.style.display === "flex";
+          box.style.display = abierto ? "none" : "flex";
+          box.style.flexDirection = "column";
+          box.style.gap = "10px";
+          if (arrow) arrow.style.transform = abierto ? "rotate(0deg)" : "rotate(180deg)";
+        });
+      });
+
+      // ----- Zoom tipo Amazon -----
+      let quoteScrollY = 0;
+      // Escritorio: al pasar el mouse la imagen se amplía siguiendo el cursor.
+      // Celular/escritorio: al tocar o hacer clic se abre en pantalla completa.
+      function setupQuoteZoom(box) {
+        if (!box) return;
+        const img = box.querySelector("img");
+        box.addEventListener("mousemove", (e) => {
+          const r = box.getBoundingClientRect();
+          const x = ((e.clientX - r.left) / r.width) * 100;
+          const y = ((e.clientY - r.top) / r.height) * 100;
+          img.style.transformOrigin = `${x}% ${y}%`;
+        });
+        box.addEventListener("click", () => openQuoteLightbox(img.src, img.alt));
+      }
+
+      function getQuoteLightbox() {
+        let ov = document.getElementById("quote-lightbox");
+        if (ov) return ov;
+
+        ov = document.createElement("div");
+        ov.id = "quote-lightbox";
+        ov.className = "qlb-overlay";
+        ov.innerHTML = `
+          <button class="qlb-close" aria-label="Cerrar">&times;</button>
+          <div class="qlb-stage"><img class="qlb-img" alt=""></div>
+          <div class="qlb-tip">Toca la imagen para acercar</div>
+        `;
+        document.body.appendChild(ov);
+
+        const img = ov.querySelector(".qlb-img");
+        const stage = ov.querySelector(".qlb-stage");
+
+        img.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const r = img.getBoundingClientRect();
+          if (!img.classList.contains("zoomed")) {
+            const x = ((e.clientX - r.left) / r.width) * 100;
+            const y = ((e.clientY - r.top) / r.height) * 100;
+            img.style.transformOrigin = `${x}% ${y}%`;
+          }
+          img.classList.toggle("zoomed");
+        });
+        // Con zoom activo, mover el mouse recorre la imagen
+        img.addEventListener("mousemove", (e) => {
+          if (!img.classList.contains("zoomed")) return;
+          const r = stage.getBoundingClientRect();
+          const x = ((e.clientX - r.left) / r.width) * 100;
+          const y = ((e.clientY - r.top) / r.height) * 100;
+          img.style.transformOrigin = `${x}% ${y}%`;
+        });
+        ov.addEventListener("click", (e) => {
+          if (e.target === ov || e.target === stage) closeQuoteLightbox();
+        });
+        ov.querySelector(".qlb-close").addEventListener("click", closeQuoteLightbox);
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") closeQuoteLightbox();
+        });
+        return ov;
+      }
+
+      function openQuoteLightbox(src, alt) {
+        const ov = getQuoteLightbox();
+        const img = ov.querySelector(".qlb-img");
+        img.classList.remove("zoomed");
+        img.style.transformOrigin = "50% 50%";
+        img.src = src;
+        img.alt = alt || "";
+        quoteScrollY = window.scrollY;
+        ov.classList.add("open");
+        // Bloquea el scroll del fondo sin tocar la altura (así no salta al inicio)
+        document.documentElement.style.overflow = "hidden";
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeQuoteLightbox() {
+        const ov = document.getElementById("quote-lightbox");
+        if (!ov || !ov.classList.contains("open")) return;
+        ov.classList.remove("open");
+        document.documentElement.style.overflow = "";
+        document.body.style.overflow = "";
+        // Vuelve exactamente a donde estaba el cliente
+        window.scrollTo({ top: quoteScrollY, behavior: "instant" });
+      }
+
+      function buildQuoteWhatsAppUrl(key) {
+        const p = quoteData[key];
+        const msg =
+          `¡Hola Neo Chronos! 👋 Quiero cotizar este modelo:\n\n` +
+          `⌚ *${p.title}*\n` +
+          (p.brand ? `🏷️ Marca: ${p.brand}\n` : "") +
+          `\n⏱️ Entiendo que la entrega es de ${QUOTE_DELIVERY_TEXT}.\n` +
+          `¿Me confirman el precio y cómo coordinar el pedido?`;
+        return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+      }
+
+      function quoteOnWhatsApp(key) {
+        if (!quoteData[key]) return;
+        window.open(buildQuoteWhatsAppUrl(key), "_blank");
+      }
+
+      function onQuoteSearch() {
+        quotePage = 1;
+        updateQuoteCatalog();
+      }
+
+      function updateQuoteCatalog() {
+        const searchEl = document.getElementById("quote-search-bar");
+        const term = searchEl ? searchEl.value.toLowerCase() : "";
+
+        const keys = Object.keys(quoteData).filter((key) => {
+          const p = quoteData[key];
+          return (
+            p.title.toLowerCase().includes(term) &&
+            (quoteBrand === "Todos" || p.brand === quoteBrand)
+          );
+        });
+
+        renderQuoteGrid(keys, term);
+        renderQuotePagination(keys.length);
+
+        // Botón general: el cliente pide un modelo que no está en la lista
+        const customLink = document.getElementById("quote-custom-wa");
+        if (customLink) {
+          const msg =
+            `¡Hola Neo Chronos! 👋 Quiero cotizar un reloj que no veo en la página.\n\n` +
+            `Entiendo que los modelos bajo pedido tienen una entrega de ${QUOTE_DELIVERY_TEXT}.`;
+          customLink.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+        }
+      }
+
+      function renderQuoteGrid(keys, term) {
+        const grid = document.getElementById("quote-grid");
+        if (!grid) return;
+        grid.innerHTML = "";
+
+        if (keys.length === 0) {
+          grid.innerHTML = `<div class="quote-empty">${
+            term
+              ? "No encontramos ese modelo en la lista.<br>Escríbenos por WhatsApp y lo cotizamos por ti."
+              : "Pronto agregaremos nuevos modelos para cotizar.<br>Mientras tanto, escríbenos por WhatsApp y te ayudamos a encontrar el tuyo."
+          }</div>`;
+          return;
+        }
+
+        const start = (quotePage - 1) * quoteItemsPerPage;
+        keys.slice(start, start + quoteItemsPerPage).forEach((key) => {
+          const p = quoteData[key];
+
+          let img = `relojes/${p.title}/imagen_sin_fondo_4k.webp`;
+          if (p.images && p.images.length > 0 && p.images[0].trim() !== "") {
+            img = obtenerImagenSegura(p.folder, p.images[0], p.title);
+          }
+
+          const card = document.createElement("div");
+          card.className = "product-card";
+          card.innerHTML = `
+            <div class="product-image-box quote-zoom" title="Ampliar imagen">
+              <img src="${img}" alt="${p.title}" class="product-img">
+              <span class="zoom-hint"><i class="fas fa-magnifying-glass-plus"></i></span>
+            </div>
+            <div class="product-details-box">
+              <span class="card-tag"><i class="fas fa-clock"></i> Bajo pedido · ${QUOTE_DELIVERY_TEXT}</span>
+              <p class="card-brand">${p.brand || ""}</p>
+              <h3 class="card-title" style="cursor: default">${p.title}</h3>
+              <p class="card-color">${p.folder || ""}</p>
+              <div class="card-actions">
+                <button class="btn-card primary" onclick="quoteOnWhatsApp('${key}')">COTIZAR POR WHATSAPP</button>
+              </div>
+            </div>
+          `;
+          grid.appendChild(card);
+          setupQuoteZoom(card.querySelector(".quote-zoom"));
+        });
+      }
+
+      function renderQuotePagination(totalItems) {
+        const controls = document.getElementById("quote-pagination");
+        if (!controls) return;
+        controls.innerHTML = "";
+
+        const totalPages = Math.ceil(totalItems / quoteItemsPerPage);
+        if (totalPages <= 1) return;
+
+        const goTo = (page) => {
+          quotePage = page;
+          updateQuoteCatalog();
+          document.getElementById("cotizar").scrollIntoView();
+        };
+
+        if (quotePage > 1) {
+          const prev = document.createElement("button");
+          prev.className = "page-btn";
+          prev.innerHTML = "&laquo;";
+          prev.onclick = () => goTo(quotePage - 1);
+          controls.appendChild(prev);
+        }
+
+        // Máximo 8 números a la vez; la ventana avanza con la página actual
+        const maxVisibleButtons = 8;
+        let startPage = Math.max(
+          1,
+          quotePage - Math.floor(maxVisibleButtons / 2),
+        );
+        let endPage = startPage + maxVisibleButtons - 1;
+        if (endPage > totalPages) {
+          endPage = totalPages;
+          startPage = Math.max(1, endPage - maxVisibleButtons + 1);
+        }
+
+        for (let i = startPage; i <= endPage; i++) {
+          const btn = document.createElement("button");
+          btn.className = `page-btn ${quotePage === i ? "active" : ""}`;
+          btn.innerText = i;
+          btn.onclick = () => goTo(i);
+          controls.appendChild(btn);
+        }
+
+        if (quotePage < totalPages) {
+          const next = document.createElement("button");
+          next.className = "page-btn";
+          next.innerHTML = "&raquo;";
+          next.onclick = () => goTo(quotePage + 1);
+          controls.appendChild(next);
+        }
+      }
+
       document.addEventListener("DOMContentLoaded", loadInventoryFromSheets);
+      document.addEventListener("DOMContentLoaded", loadQuoteModels);
     </script>
     <footer class="footer">
       <div class="footer-title">
