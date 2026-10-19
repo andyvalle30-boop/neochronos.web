@@ -2236,6 +2236,134 @@
           text-align: left;
         }
       }
+
+      /* BANNER PUBLICITARIO: APPLE WATCH SE 3 */
+      .promo-ad {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+        min-height: 480px;
+        display: flex;
+        align-items: center;
+        padding: 80px 60px;
+        background:
+          url("banners/banner.webp") center / cover no-repeat,
+          url("apple-watch-se3.webp") center / cover no-repeat,
+          #0e0f11;
+        border-top: 1px solid rgba(196, 139, 34, 0.35);
+        border-bottom: 1px solid rgba(196, 139, 34, 0.35);
+      }
+      /* Velo: deja ver el reloj a la izquierda y oscurece el lado del texto */
+      .promo-ad::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background:
+          linear-gradient(to bottom, rgba(10, 11, 13, 0.55) 0%, rgba(10, 11, 13, 0) 22%, rgba(10, 11, 13, 0) 78%, rgba(10, 11, 13, 0.55) 100%),
+          linear-gradient(90deg, rgba(10, 11, 13, 0.05) 0%, rgba(10, 11, 13, 0.4) 45%, rgba(10, 11, 13, 0.9) 100%);
+        box-shadow: inset 0 0 0 1px rgba(213, 189, 150, 0.1);
+      }
+      .promo-ad-inner {
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: flex-end;
+      }
+      .promo-ad-copy {
+        max-width: 460px;
+        text-align: left;
+        text-shadow: 0 2px 14px rgba(0, 0, 0, 0.65);
+      }
+      .promo-ad-title {
+        font-size: 1.6rem;
+        font-weight: 200;
+        letter-spacing: 6px;
+        text-transform: uppercase;
+        color: #d5bd96;
+        margin-bottom: 14px;
+      }
+      .promo-ad-text {
+        font-size: 0.8rem;
+        font-weight: 400;
+        letter-spacing: 1px;
+        color: #f1ece3;
+        margin-bottom: 8px;
+      }
+      .promo-ad-lead {
+        font-size: 2.7rem;
+        font-weight: 200;
+        line-height: 1.1;
+        letter-spacing: 1px;
+        color: var(--white);
+        margin-top: 22px;
+        margin-bottom: 14px;
+      }
+      .promo-ad-ask {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        font-size: 0.85rem;
+        font-weight: 400;
+        letter-spacing: 6px;
+        text-transform: uppercase;
+        color: #d5bd96;
+        margin-bottom: 34px;
+      }
+      .promo-ad-ask::before {
+        content: "";
+        width: 48px;
+        height: 1px;
+        background: #d5bd96;
+      }
+      .promo-ad-btn {
+        display: inline-block;
+        background: rgba(10, 11, 13, 0.4);
+        -webkit-backdrop-filter: blur(6px);
+        backdrop-filter: blur(6px);
+        text-shadow: none;
+      }
+      .promo-ad-btn:hover {
+        background-color: var(--white);
+      }
+      .promo-ad-btn:focus-visible {
+        outline: 2px solid #d5bd96;
+        outline-offset: 4px;
+      }
+      @media screen and (max-width: 768px) {
+        .promo-ad {
+          min-height: 460px;
+          align-items: flex-end;
+          padding: 40px 24px;
+        }
+        .promo-ad::before {
+          background: linear-gradient(to bottom, rgba(10, 11, 13, 0.2) 0%, rgba(10, 11, 13, 0.55) 45%, rgba(10, 11, 13, 0.92) 100%);
+        }
+        .promo-ad-inner {
+          justify-content: center;
+        }
+        .promo-ad-copy {
+          text-align: center;
+        }
+        .promo-ad-title {
+          font-size: 1.2rem;
+          letter-spacing: 4px;
+        }
+        .promo-ad-lead {
+          font-size: 2rem;
+          margin-top: 18px;
+        }
+        .promo-ad-ask {
+          justify-content: center;
+          font-size: 0.75rem;
+          letter-spacing: 5px;
+          margin-bottom: 26px;
+        }
+        .promo-ad-btn {
+          padding: 14px 36px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -2261,7 +2389,7 @@
       </header>
     </div>
     <!-- === POPUP DE RELOJES MÁS VENDIDOS === -->
-    <!<!-- === POPUP DE RELOJES MÁS VENDIDOS === -->
+    
     <div id="bestsellers-popup" class="bestsellers-overlay">
       <div class="bestsellers-modal premium-dark">
         <!-- Botón de cerrar -->
@@ -2342,6 +2470,24 @@
               <div class="brand-item">CURREN</div>
               <div class="brand-item">OMEGA</div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="promo-ad" id="oferta-apple-watch" aria-label="Oferta Apple Watch SE 3">
+        <div class="promo-ad-inner">
+          <div class="promo-ad-copy">
+            <h2 class="promo-ad-title">Apple Watch SE 3</h2>
+            <p class="promo-ad-text">Bajo pedido · Entrega estimada: 15 a 20 días</p>
+            <p class="promo-ad-lead">Puede ser tuyo.</p>
+            <p class="promo-ad-ask">Cotízalo ahora</p>
+            <a
+              class="btn-premium promo-ad-btn"
+              href="https://wa.me/593987916568?text=%C2%A1Hola%20Neo%20Chronos%21%20Quisiera%20cotizar%20el%20Apple%20Watch%20SE%203%20%28%29.%20%C2%BFMe%20confirman%20la%20entrega%20estimada%20de%2015%20a%2020%20d%C3%ADas%3F"
+              target="_blank"
+              rel="noopener"
+              >Cotizar por WhatsApp</a
+            >
           </div>
         </div>
       </section>
